@@ -1,17 +1,8 @@
 import React from 'react';
 
 
-export default function Dashboard ({ setStrikes, strikes, balls, setBalls, hits, setHits, player, setPlayer, fouls, setFouls }) {
-    const foulLogic = () => {
-        // if (fouls === 1) {
-        //     setBalls(balls + 1),
-        //     setStrikes(strikes + 1)
-        // } else if (fouls >= 2) {
-        //     setBalls(balls + 2),
-        //     setStrikes(strikes + 2)
-        // }
-        setFouls(fouls + 1)
-    }
+export default function Dashboard ({ setStrikes, strikes, balls, setBalls, hits, setHits, player, setPlayer }) {
+    
     return (
         <div>
             <h1>Dashboard</h1>
@@ -25,11 +16,9 @@ export default function Dashboard ({ setStrikes, strikes, balls, setBalls, hits,
             {balls > 4 && (
                 setBalls(0)
             )}
-            <button onClick={() => setFouls(foulLogic)}>Add foul</button>
-            {/* {fouls > 1 && (
-                setBalls(balls + 1)
-            )} */}
+            <button onClick={() => strikes < 2 ? setStrikes(strikes + 1) : setStrikes(strikes)}>Add foul</button>
             <form type="submit">
+                <h2>Set a player to bat!</h2>
                 <input type="text" value={player} onChange={e => setPlayer(e.target.value)}/>
             </form>
         </div>
