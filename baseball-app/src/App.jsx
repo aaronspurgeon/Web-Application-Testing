@@ -1,5 +1,5 @@
 import React from 'react';
-import Display from './Components/Display';
+import Display from './Components/Display/Display';
 import './App.css';
 
 function App() {

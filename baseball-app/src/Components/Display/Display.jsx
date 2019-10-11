@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Dashboard from './Dashboard';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import Dashboard from '../Dashboard/Dashboard';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export default function Display () {
     const [strikes, setStrikes] = useState(0);
