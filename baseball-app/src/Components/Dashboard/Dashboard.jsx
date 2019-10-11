@@ -9,12 +9,14 @@ export default function Dashboard ({ setStrikes, strikes, balls, setBalls, hits,
 
             <button onClick={() => setStrikes(strikes + 1)}>Add strike</button>
             {strikes > 3 && (
-                setStrikes(0)
+                setStrikes(0),
+                setPlayer("")
             )}
 
             <button onClick={() => setBalls(balls + 1)}>Add Ball</button>
             {balls > 4 && (
-                setBalls(0)
+                setBalls(0),
+                setPlayer("")
             )}
             <button onClick={() => strikes < 2 ? setStrikes(strikes + 1) : setStrikes(strikes)}>Add foul</button>
             <form type="submit">
